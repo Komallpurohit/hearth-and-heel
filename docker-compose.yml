@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:16
+    container_name: hearth-and-heel-db
+    environment:
+      POSTGRES_DB: hearth_and_heel
+      POSTGRES_USER: devuser
+      POSTGRES_PASSWORD: devpassword
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
